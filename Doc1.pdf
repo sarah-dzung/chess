@@ -1,0 +1,19 @@
+import pygame, sys
+
+pygame.init()
+clock = pygame.time.Clock()
+
+screen = pygame.display.set_mode((600, 600))
+
+myfont = pygame.font.SysFont('Comic Sans MS', 30)
+textsurface = myfont.render('Some Text', True, (0, 0, 0))
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+    screen.fill((200, 200, 200))
+    screen.blit(textsurface,(0,0))
+    pygame.display.update()
+    clock.tick()
